@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render WITH JSX</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Sử dụng link CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Sử dụng JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        // Hiển thị thẻ
+        const h1 = <h1>Hello world</h1>;
+
+        // Hiển thị thẻ có nội dung động
+        class Title extends React.Component {
+            render() {
+                return <h1>Xin chào {this.props.name}</h1>
+            }
+        }
+
+        // Hiển thị danh sách tên
+        const names = ["Bùi Hiên", "Thu Hằng", "Minh Duy"];
+        // Hiển thị thẻ có nội dung động
+        class ListName extends React.Component {
+            render() {
+                return (
+                    <ul>
+                        {this.props.names.map((name, index) => {
+                            return <li key={index}>{name}</li>
+                        })}  
+                    </ul>
+                )
+            }
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // Render clock
+        const tick = () => {
+            const element = (
+                <div>
+                    <h2>Time in the world</h2>
+                    <h2>Clock : {new Date().toLocaleTimeString()}</h2>
+                </div>
+            )
+            root.render(element);
+        }
+
+        setInterval(tick, 1000);
+
+        // root.render(h1);
+        // root.render(<Title name="Bùi Hiên" />);
+        // root.render(<ListName names={names} />);
+    </script>
+</body>
+
+</html>

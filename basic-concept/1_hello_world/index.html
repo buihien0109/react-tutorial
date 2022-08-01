@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Sử dụng link CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        // Tạo element không với JSX
+        const h1 = React.createElement("h1", null, "Hello world");
+        console.log(h1);
+
+        // Tạo element với tham số truyền vào
+        class Hello extends React.Component {
+            render() {
+                return React.createElement('h1', null, `Hello ${this.props.name}`);
+            }
+        }
+
+        const h2 = React.createElement(Hello, {name : "Hiên"}, null);
+        console.log(h2);
+
+        // Render list item
+        // Render item
+        class Name extends React.Component {
+            render() {
+                return React.createElement('li', null, `${this.props.name}`);
+            }
+        }
+
+        // Render list item
+        class ListName extends React.Component {
+            render() {
+                return React.createElement('ul', null, 
+                    this.props.names.map((name, index) => {
+                        return React.createElement(Name, {name : name, key : index}, null);
+                    })
+                );
+            }
+        }
+
+        // Truyền dữ liệu vào trong list
+        let names = ["Bùi Hiên", "Thu Hằng", "Minh Duy"];
+        const listName = React.createElement(ListName, {names : names}, null);
+
+        // Tạo root DOM
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // Render
+        root.render(listName);
+    </script>
+</body>
+
+</html>
