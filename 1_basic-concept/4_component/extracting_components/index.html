@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render WITH JSX</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Sử dụng link CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Sử dụng JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <script type="text/babel">
+
+        // Hiển thị thông tin của user
+        const UserInfo = ({ author }) => {
+            return (
+                <div className="user-info">
+                    <img className="avatar"
+                        src={author.avatarUrl}
+                        alt={author.name}
+                    />
+                    <div className="user-info-name">
+                        {author.name}
+                    </div>
+                </div>
+            )
+        }
+
+        // Hiển thị thông tin của comment
+        const Comment = ({ author, date, text }) => {
+            return (
+                <div className="comment">
+
+                    <UserInfo author={author} />
+                    
+                    <div className="comment-text">
+                        {text}
+                    </div>
+                    <div className="comment-date">
+                        {formatDate(date)}
+                    </div>
+                </div>
+            );
+        }
+
+        // Format ngày tháng 
+        const formatDate = date => {
+            return date.toLocaleDateString();
+        }
+
+        // Thông tin về comment
+        const comment = {
+            date: new Date(),
+            text: 'I hope you enjoy learning React!',
+            author: {
+                name: 'Hello Kitty',
+                avatarUrl: 'http://placekitten.com/g/64/64'
+            }
+        };
+
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(
+            <Comment
+                author={comment.author}
+                date={comment.date}
+                text={comment.text}
+            />
+        )
+
+    </script>
+</body>
+
+</html>

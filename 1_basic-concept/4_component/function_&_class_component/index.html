@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render WITH JSX</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Sử dụng link CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Sử dụng JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        // Ví dụ 1 ************
+        // Function component
+        const HeadingFunction = () => {
+            return <h1>Hello world</h1>;
+        }
+
+        // Class component
+        class HeadingClass extends React.Component {
+            render() {
+                return <h1>Hello world</h1>;
+            }
+        }
+
+        // Ví dụ 2 ************
+        // Hiển thị thẻ có nội dung động
+
+        // Function component
+        const TitleFunction = ({ name }) => {
+            return <h1>Xin chào {name}</h1>;
+        }
+
+        // Class component
+        class TitleClass extends React.Component {
+            render() {
+                return <h1>Xin chào {this.props.name}</h1>;
+            }
+        }
+
+        // Ví dụ 3 ************
+        // Hiển thị thẻ có nội dung động
+
+        // Hiển thị danh sách tên
+        const names = ["Bùi Hiên", "Thu Hằng", "Minh Duy"];
+
+        // Function component
+        const ListNameFunction = ({ names }) => {
+            return (
+                <ul>
+                    {names.map((name, index) => {
+                        return <li key={index}>{name}</li>
+                    })}
+                </ul>
+            )
+        }
+
+        // Class component
+        class ListNameClass extends React.Component {
+            render() {
+                return (
+                    <ul>
+                        {this.props.names.map((name, index) => {
+                            return <li key={index}>{name}</li>
+                        })}
+                    </ul>
+                )
+            }
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // Ví dụ 1
+        // root.render(<HeadingFunction />);
+        // root.render(<HeadingClass />);
+
+        // Ví dụ 2
+        // root.render(<TitleFunction name={"Bùi Hiên"} />);
+        // root.render(<TitleClass name={"Bùi Hiên"} />);
+
+        // Ví dụ 3
+        // root.render(<ListNameFunction names={names} />);
+        root.render(<ListNameClass names={names} />);
+    </script>
+</body>
+
+</html>

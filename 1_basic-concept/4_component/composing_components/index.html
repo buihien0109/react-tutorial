@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Sử dụng link CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Sử dụng JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <script type="text/babel">
+    
+        // Hiển thị thẻ có nội dung động
+
+        // Function component
+        const Wellcome = ({ name }) => {
+            return <h1>Xin chào {name}</h1>;
+        }
+
+        const App = () => {
+            return (
+                <div>
+                    <Wellcome name={"Bùi Hiên"}/>
+                    <Wellcome name={"Thu Hằng"}/>
+                    <Wellcome name={"Minh Duy"}/>
+                </div>
+            )
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />)
+        
+    </script>
+</body>
+
+</html>
