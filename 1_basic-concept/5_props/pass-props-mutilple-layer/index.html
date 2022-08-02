@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <!-- Sử dụng link CDN -->
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+        ></script>
+        <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+
+        <!-- Sử dụng JSX -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+            const App = (props) => {
+                console.log(props);
+                return <LayerOne author={props.author} />;
+            };
+
+            const LayerOne = (props) => {
+                console.log(props);
+                return <LayerTwo author={props.author} />;
+            };
+
+            const LayerTwo = (props) => {
+                console.log(props);
+                return <LayerThree author={props.author} />;
+            };
+
+            const LayerThree = (props) => {
+                const { name, email, phone, address } = props.author;
+                return (
+                    <div>
+                        <Wellcome name={name} />
+                        <Info email={email} phone={phone} address={address} />
+                    </div>
+                );
+            };
+
+            const Wellcome = ({ name }) => {
+                return <h1>Xin chào {name}</h1>;
+            };
+
+            const Info = ({ email, phone, address }) => {
+                return (
+                    <ul>
+                        <li>Email : {email}</li>
+                        <li>Phone : {phone}</li>
+                        <li>Address : {address}</li>
+                    </ul>
+                );
+            };
+
+            const author = {
+                name: "Bui Hien",
+                email: "hien@techmaster.vn",
+                phone: "0987654321",
+                address: "Thai Binh",
+            };
+
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+            root.render(<App author={author} />);
+        </script>
+    </body>
+</html>
