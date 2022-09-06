@@ -21,17 +21,23 @@ function App() {
   });
 
   // Ẩn hiện component Clock
-  const [showClock, setShowClock] = useState(true);
+  // const [showClock, setShowClock] = useState(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+
+
     async function fetchPostList() {
+
       try {
         // Parse object filter thành query string
         const paramsString = queryString.stringify(filters);
 
         // Gọi API
         const requestUrl = `http://js-post-api.herokuapp.com/api/posts?${paramsString}`;
-        const response = await fetch(requestUrl);
+        const response = await fetch(requestUrl, {
+          signal: controller.signal
+        });
         const responseJSON = await response.json();
         console.log(responseJSON);
 
@@ -46,6 +52,10 @@ function App() {
     }
 
     fetchPostList();
+
+    return () => {
+      controller.abort();
+    }
   }, [filters]);
 
   // Thêm effect khác
@@ -75,15 +85,15 @@ function App() {
     <div className="app">
       <h2>Learn UseEffect</h2>
 
-      {showClock && <Clock />}
+      {/* {showClock && <Clock />}
 
-      <button onClick={() => setShowClock(false)}>Hide Clock</button>
+      <button onClick={() => setShowClock(false)}>Hide Clock</button> */}
 
-      {/* <PostFiltersForm onSubmit={handleFiltersChange} />
+      <PostFiltersForm onSubmit={handleFiltersChange} />
 
       <PostList posts={posts} />
 
-      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
+      <Pagination pagination={pagination} onPageChange={handlePageChange} />
     </div>
   );
 }
