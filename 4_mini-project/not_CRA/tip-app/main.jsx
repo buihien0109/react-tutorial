@@ -1,14 +1,14 @@
 const Tip = () => {
-    const [bill, setBill] = React.useState(0);
+    const [bill, setBill] = React.useState(0.0);
     const [tipPercent, setTipPersent] = React.useState(15);
     const [numberOfPeople, setNumberOfPeople] = React.useState(1);
 
     const calculateTotalTip = () => {
-        return (Number(bill) / 100) * tipPercent;
+        return (bill / 100) * tipPercent;
     };
 
-    const calculateTotal = () => {
-        return calculateTotalTip() + Number(bill);
+    const calculateTotalMoney = () => {
+        return calculateTotalTip() + bill;
     };
 
     return (
@@ -25,7 +25,7 @@ const Tip = () => {
                             value={bill}
                             id="bill"
                             className="val"
-                            onChange={(e) => setBill(e.target.value)}
+                            onChange={(e) => setBill(+e.target.value)}
                         />
                     </div>
                 </div>
@@ -39,7 +39,7 @@ const Tip = () => {
                 <div className="wrapper">
                     <span className="lbl">Total Amount</span>
                     <span id="total-amount" className="val">
-                        ${calculateTotal()}
+                        ${calculateTotalMoney()}
                     </span>
                 </div>
             </section>
@@ -57,7 +57,7 @@ const Tip = () => {
                     min="1"
                     id="tip"
                     value={tipPercent}
-                    onChange={(e) => setTipPersent(e.target.value)}
+                    onChange={(e) => setTipPersent(+e.target.value)}
                 />
 
                 <div className="wrapper">
@@ -74,7 +74,7 @@ const Tip = () => {
                     max="15"
                     id="no-of-people"
                     value={numberOfPeople}
-                    onChange={(e) => setNumberOfPeople(e.target.value)}
+                    onChange={(e) => setNumberOfPeople(+e.target.value)}
                 />
             </section>
             <section>
@@ -87,7 +87,7 @@ const Tip = () => {
                 <div className="wrapper">
                     <span className="lbl"> Total Per Person </span>
                     <span id="total-per-person" className="val">
-                        ${calculateTotalTip()}
+                        ${(bill + calculateTotalTip()) / numberOfPeople}
                     </span>
                 </div>
             </section>

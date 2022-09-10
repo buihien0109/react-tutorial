@@ -36,7 +36,7 @@ const BMI = () => {
             setHeightError("Height cannot be blank");
             isValid = false;
         } else if (height <= 0) {
-            setWeightError("Height must be greater than 0");
+            setHeightError("Height must be greater than 0");
             isValid = false;
         } else if (!Number(height)) {
             setHeightError("Height is not formatted correctly");
@@ -75,7 +75,7 @@ const BMI = () => {
                 <button onClick={calculateBmi}>Calculate</button>
             </div>
             <div>
-                <h2>BMI : {bmi}</h2>
+                {bmi && <h2>BMI : {bmi}</h2>}
             </div>
         </>
     );
