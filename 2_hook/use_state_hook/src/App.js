@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.scss';
 import ColorBox from './components/ColorBox';
+import Counter from './components/Counter';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
@@ -54,9 +55,11 @@ function App() {
       <h1>Wellcome to React Hooks</h1>
 
       {/* <ColorBox /> */}
-      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
+      {/* <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} /> */}
 
-      <TodoForm handleAddTodo={handleAddTodo} />
+      {/* <TodoForm handleAddTodo={handleAddTodo} /> */}
+
+      <Counter />
     </div>
   );
 }
