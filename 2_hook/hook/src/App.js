@@ -1,3 +1,4 @@
+import { useCallback, useState } from "react";
 // import Counter from './hook-useState/Counter';
 // import Content from './hook-useEffect/Content';
 // import Api from './hook-useEffect/Api';
@@ -5,35 +6,43 @@
 // import ApiOther from './hook-useEffect/ApiOther';
 // import Content from './hook-useRef/Content';
 // import Blog from "./reactmemo/Blog";
-import Blog from "./hook-useCallback/Blog";
+// import Blog from "./hook-useCallback/Blog";
+// import AvatarPreview from "./hook-useEffect/AvatarPreview";
+// import Counter from "./hook-useReducer/Counter";
+// import TodoList from "./hook-useReducer/TodoList";
+import Theme from "./hook-useContext/Theme";
 import "./App.css";
-import { useCallback, useState } from "react";
 
 function App() {
-  const [isShowClock, setIsShowClock] = useState(true);
-  const [count, setCount] = useState(0);
-  const [user, setUser] = useState({
-    id: 1,
-    name: "Bùi hiên"
-  });
+  // 1. Sử dụng useEffect - Clock
+  // const [isShowClock, setIsShowClock] = useState(true);
 
-  const addCount = () => {
-    setCount(count + 1);
-  };
+  // 2. Sử dụng useCallback
+  // const [count, setCount] = useState(0);
+  // const [user, setUser] = useState({
+  //   id: 1,
+  //   name: "Bùi hiên"
+  // });
 
-  const handleAnyThing = useCallback(() => {
-    console.log("handleAnyThing")
-  }, [count])
+  // const addCount = () => {
+  //   setCount(count + 1);
+  // };
+
+  // const handleAnyThing = useCallback(() => {
+  //   console.log("handleAnyThing")
+  // }, [count])
 
   return (
-    <div className="App" style={{ height: 2000 }}>
+    <div style={{ height: 2000 }}>
       {/* <button onClick={() => setIsShowClock(!isShowClock)}>Toggle</button>
       {isShowClock && <Clock />} */}
 
-      <h1>Counter {count}</h1>
+      {/* <h1>Counter {count}</h1>
       <button onClick={addCount}>Add</button>
 
-      <Blog handleAnyThing={handleAnyThing} />
+      <Blog handleAnyThing={handleAnyThing} /> */}
+
+      <Theme />
     </div>
   );
 }
