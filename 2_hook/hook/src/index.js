@@ -4,13 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ThemeProvider from "./hook-useContext/Theme/ThemeContext/ThemeContext";
+import Provider from "./global-state/TodoList/store/Provider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <ThemeProvider>
+        <Provider>
             <App />
-        </ThemeProvider>
+        </Provider>
     </React.StrictMode>
 );
 

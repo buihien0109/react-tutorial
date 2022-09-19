@@ -6,8 +6,8 @@ function Counter() {
     // Xử lý phức tạp , tốn nhiều thời gian để tính toán
     // Qua mỗi lần render thì Xử lý này sẽ phải tính toán lại
     // Sử dụng callback trong useState để chạy duy nhất lần đầu
+    
     // const rs = numbers.reduce((total, number) => total + number, 0);
-
     // console.log(rs);
 
     // Quản lý State

@@ -10,7 +10,11 @@ import { useCallback, useState } from "react";
 // import AvatarPreview from "./hook-useEffect/AvatarPreview";
 // import Counter from "./hook-useReducer/Counter";
 // import TodoList from "./hook-useReducer/TodoList";
-import Theme from "./hook-useContext/Theme";
+// import Theme from "./hook-useContext/Theme";
+// import TodoList from "./global-state/TodoList";
+// import DogApi from "./custom-hook/DogApi";
+// import Content from "./custom-hook/Content";
+import Color from "./custom-hook/Color";
 import "./App.css";
 
 function App() {
@@ -42,7 +46,7 @@ function App() {
 
       <Blog handleAnyThing={handleAnyThing} /> */}
 
-      <Theme />
+      <Color />
     </div>
   );
 }
