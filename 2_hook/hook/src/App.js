@@ -9,12 +9,13 @@ import { useCallback, useState } from "react";
 // import Blog from "./hook-useCallback/Blog";
 // import AvatarPreview from "./hook-useEffect/AvatarPreview";
 // import Counter from "./hook-useReducer/Counter";
-// import TodoList from "./hook-useReducer/TodoList";
+import TodoList from "./hook-useReducer/TodoList";
 // import Theme from "./hook-useContext/Theme";
 // import TodoList from "./global-state/TodoList";
 // import DogApi from "./custom-hook/DogApi";
 // import Content from "./custom-hook/Content";
-import Color from "./custom-hook/Color";
+// import Color from "./custom-hook/Color";
+// import Product from "./hook-useMemo/Product";
 import "./App.css";
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
   // }, [count])
 
   return (
-    <div style={{ height: 2000 }}>
+    <div style={{ height: 2000, padding: 20 }}>
       {/* <button onClick={() => setIsShowClock(!isShowClock)}>Toggle</button>
       {isShowClock && <Clock />} */}
 
@@ -46,7 +47,7 @@ function App() {
 
       <Blog handleAnyThing={handleAnyThing} /> */}
 
-      <Color />
+      <TodoList />
     </div>
   );
 }
