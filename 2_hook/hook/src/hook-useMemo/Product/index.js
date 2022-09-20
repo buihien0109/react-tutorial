@@ -9,6 +9,7 @@ function Product() {
         { id: 3, name: "Quần âu", price: 300000 },
     ]);
 
+    // Thêm product mới
     const addProduct = () => {
         setProducts([
             ...products,
@@ -20,8 +21,15 @@ function Product() {
         ]);
     };
 
+    // useMemo : Tránh tính toán function nếu không có sự thay đổi về deps
+    // useMemo : const value = useMemo(callbackFunction(), [deps])
+
+    // Total sẽ được tính toán lại nếu có sự thay đổi về product
     const total = useMemo(() => {
-        return products.reduce((total, product) => (total += product.price), 0);
+        let rs = products.reduce((total, product) => (total += product.price), 0);
+        console.log(rs);
+
+        return rs;
     }, [products]);
 
     return (
@@ -38,8 +46,7 @@ function Product() {
             <ul>
                 {products.map((product) => (
                     <li key={product.id}>
-                        Id :{product.id} - Name : {product.name} - Price :{" "}
-                        {product.price}
+                        Id :{product.id} - Name : {product.name} - Price : {product.price}
                     </li>
                 ))}
             </ul>

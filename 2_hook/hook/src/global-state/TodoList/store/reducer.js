@@ -12,9 +12,10 @@ const reducer = (state, action) => {
             return [...state, { ...action.payload }];
         }
         case UPDATE_TODO: {
+            const { id, title } = action.payload
             const newState = state.map((todo) =>
-                todo.id === action.payload.id
-                    ? { ...todo, title: action.payload.title }
+                todo.id === id
+                    ? { ...todo, title: title }
                     : todo
             )
             return newState

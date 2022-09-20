@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState } from "react";
 
 /*
 1. Initial state
@@ -13,40 +13,40 @@ const initialState = 0;
 const ADD_COUNT = "ADD_COUNT";
 const SUBTRACT_COUNT = "SUBTRACT_COUNT";
 
-// 3. Tạo reducer
-// reducer : Bản chất là 1 hàm có 2 tham số : state, action dùng để thay đổi state dự trên action
-// state : state hiện tại
-// action : hành động để thay đổi state
-// - payload : Dữ liệu (option)
-// - type : action type
+/*
+3. Tạo reducer
+reducer : Bản chất là 1 hàm có 2 tham số : state, action dùng để thay đổi state dự trên action
+state : State hiện tại
+action : Hành động để thay đổi state
+    - payload : Dữ liệu (option)
+    - type : action type
+*/
+
 const reducer = (state, action) => {
-    console.log({ state, action })
+    console.log({ state, action });
     switch (action.type) {
         case ADD_COUNT: {
-            return state + action.payload
+            return state + action.payload;
         }
         case SUBTRACT_COUNT: {
-            return state - action.payload
+            return state - action.payload;
         }
         default: {
-            throw new Error(`${action.type} invalid`)
+            throw new Error(`${action.type} invalid`);
         }
     }
-}
-
+};
 
 function Counter() {
     const [count, dispatch] = useReducer(reducer, initialState);
 
     const addCount = () => {
-        // setCount(count => count + 1)
-        dispatch({ type: ADD_COUNT, payload: 3 })
-    }
+        dispatch({ type: ADD_COUNT, payload: 3 });
+    };
 
     const subtractCount = () => {
-        // setCount(count => count - 1)
-        dispatch({ type: SUBTRACT_COUNT, payload: 3 })
-    }
+        dispatch({ type: SUBTRACT_COUNT, payload: 3 });
+    };
 
     return (
         <>
@@ -54,7 +54,7 @@ function Counter() {
             <button onClick={addCount}>Cộng</button>
             <button onClick={subtractCount}>Trừ</button>
         </>
-    )
+    );
 }
 
-export default Counter
+export default Counter;

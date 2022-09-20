@@ -1,4 +1,4 @@
-import useColor from "./useColor";
+import useColor from "../hook/useColor";
 
 function Color() {
 

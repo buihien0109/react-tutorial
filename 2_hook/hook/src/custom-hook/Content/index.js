@@ -1,4 +1,4 @@
-import useToggle from './useToggle';
+import useToggle from "../hook/useToggle";
 
 function Content() {
     const [isShow, handleToggle] = useToggle(true);

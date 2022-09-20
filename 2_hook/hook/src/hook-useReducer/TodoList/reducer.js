@@ -1,4 +1,4 @@
-import { ADD_TODO, UPDATE_TODO, DELETE_TODO } from "./constants"
+import { ADD_TODO, UPDATE_TODO, DELETE_TODO } from "./constants";
 
 export const initialTodos = [
     { id: 1, title: "Làm bài tập", status: false },
@@ -12,12 +12,11 @@ const reducer = (state, action) => {
             return [...state, { ...action.payload }];
         }
         case UPDATE_TODO: {
+            const { id, title } = action.payload;
             const newState = state.map((todo) =>
-                todo.id === action.payload.id
-                    ? { ...todo, title: action.payload.title }
-                    : todo
-            )
-            return newState
+                todo.id === id ? { ...todo, title: title } : todo
+            );
+            return newState;
         }
         case DELETE_TODO: {
             return state.filter((todo) => todo.id !== action.payload);

@@ -1,4 +1,4 @@
-import useFetch from './useFetch';
+import useFetch from "../hook/useFetch";
 
 function DogApi() {
     const [image, handleRandomImage] = useFetch();

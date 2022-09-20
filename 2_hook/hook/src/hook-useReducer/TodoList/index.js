@@ -24,7 +24,7 @@ function TodoList() {
             id: randomId(),
             title: value,
             status: false,
-        }
+        };
 
         dispatch(addTodo(newTodo));
         setValue("");
@@ -38,7 +38,7 @@ function TodoList() {
 
     // Edit todo
     const handleEditTodo = (id) => {
-        let todoEdit = todos.find(todo => todo.id === id);
+        let todoEdit = todos.find((todo) => todo.id === id);
         let newTitle = window.prompt("New Title", todoEdit.title);
 
         if (!newTitle) return;
@@ -47,11 +47,13 @@ function TodoList() {
             return;
         }
 
-        dispatch(editTodo({
-            id: id,
-            title: newTitle
-        }));
-    }
+        dispatch(
+            editTodo({
+                id: id,
+                title: newTitle,
+            })
+        );
+    };
 
     return (
         <>
@@ -72,9 +74,7 @@ function TodoList() {
                         {todos.map((todo) => (
                             <li key={todo.id}>
                                 <span>{todo.title}</span>
-                                <button
-                                    onClick={() => handleEditTodo(todo.id)}
-                                >
+                                <button onClick={() => handleEditTodo(todo.id)}>
                                     Edit
                                 </button>
                                 <button

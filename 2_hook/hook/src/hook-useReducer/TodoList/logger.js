@@ -1,4 +1,3 @@
-
 const logger = (reducer) => {
     return (prevState, action) => {
         console.group(action.type);
@@ -11,9 +10,9 @@ const logger = (reducer) => {
         console.log("Next State : ", nextState);
 
         console.groupEnd();
-        
+
         return nextState;
-    }
-}
+    };
+};
 
 export default logger;

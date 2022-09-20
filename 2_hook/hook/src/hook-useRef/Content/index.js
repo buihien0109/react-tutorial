@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import video1 from "./video.mp4";
 
-const colors = ["red", "blue", "green", "yellow"];
+const COLORS = ["red", "blue", "green", "yellow"];
 const randomColor = (currentColor) => {
-    let newColor = currentColor
+    let newColor = currentColor;
 
     while (newColor == currentColor) {
-        let index = Math.floor(Math.random() * colors.length);
-        newColor = colors[index];
+        let index = Math.floor(Math.random() * COLORS.length);
+        newColor = COLORS[index];
     }
     return newColor;
-}
+};
 
 function Content() {
     const [value, setValue] = useState("");
@@ -23,14 +23,17 @@ function Content() {
     const timeRef = useRef();
     const colorRef = useRef();
 
+    // VD1
     // component mount => focus ô input
     useEffect(() => {
         inputRef.current.focus();
     }, []);
 
+    // VD2
     // Mỗi khi component render thì tăng current lên 1
     countRef.current++;
 
+    // VD3
     // Xử lý play video
     const handlePlay = () => {
         videoRef.current.play();
@@ -41,6 +44,7 @@ function Content() {
         videoRef.current.pause();
     };
 
+    // VD4
     // Xử lý start time
     const handleStart = () => {
         timeRef.current = setInterval(() => {
@@ -53,13 +57,13 @@ function Content() {
         clearInterval(timeRef.current);
     };
 
+    // VD5
     // Xử lý đổi màu
     const changeColor = () => {
         let newColor = randomColor(colorRef.current);
-        console.log(newColor);
         colorRef.current = newColor;
         setColor(newColor);
-    }
+    };
 
     return (
         <div>
