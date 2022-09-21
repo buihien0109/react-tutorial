@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+img {
+    max-width: 100%;
+}
+
+.nav-link.active {
+    color: red !important;
+}
+
+.course-item .thumbnail {
+    height: 250px;
+    overflow: hidden;
+}
+
+.course-item .thumbnail img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
