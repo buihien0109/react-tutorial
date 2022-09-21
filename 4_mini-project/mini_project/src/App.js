@@ -1,9 +1,9 @@
-import TipApp from "./components/TipApp";
+import Product from "./components/Product";
 
 function App() {
   return (
     <div className="App">
-      <TipApp />
+      <Product />
     </div>
   );
 }
