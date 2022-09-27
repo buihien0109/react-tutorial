@@ -23,7 +23,7 @@ function App() {
         </div>
         <main className="col-md-10 p-5">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />}/>
             <Route path="/orders">
               <Route index element={<Orders />} />
               <Route path=":orderId" element={<OrderDetail />} />
