@@ -4,7 +4,9 @@ function CourseSearch(props) {
     const { onChangeSearchTerm } = props;
     const [title, setTitle] = useState("");
 
+    // Xử lý phần tìm kiếm
     const handleSubmit = () => {
+        // Gửi giá trị cần tìm => component cha (Course)
         onChangeSearchTerm(title);
     };
     return (

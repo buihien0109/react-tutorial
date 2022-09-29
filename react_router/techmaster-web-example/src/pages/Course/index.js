@@ -3,7 +3,7 @@ import Context from "../../context/Context";
 import CourseTopic from "./components/CourseTopic";
 import CourseSearch from "./components/CourseSearch";
 import CourseList from "./components/CourseList";
-import { useLocation, useMatch, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import "./Course.css";
 
@@ -21,6 +21,7 @@ function Course() {
         }
     });
 
+    // Khi query string thay đổi => Set lại filter => Lọc lại course => Render lại
     useEffect(() => {
         const params = queryString.parse(location.search);
 
@@ -35,7 +36,9 @@ function Course() {
         const queryParams = { ...filter, term }
         navigate({
             pathname: location.pathname,
-            search: queryString.stringify(queryParams)
+            search: queryString.stringify(queryParams, {
+                skipEmptyString: true
+            })
         })
     };
 
@@ -44,7 +47,9 @@ function Course() {
         const queryParams = { ...filter, topic }
         navigate({
             pathname: location.pathname,
-            search: queryString.stringify(queryParams)
+            search: queryString.stringify(queryParams, {
+                skipEmptyString: true
+            })
         })
     };
 
@@ -75,6 +80,7 @@ function Course() {
             <div className="container">
                 <div className="row">
                     <CourseTopic
+                        filter={filter}
                         topics={topics}
                         onChangeTopic={handleChangeTopic}
                     />

@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 
 function CourseTopic(props) {
-    const { topics, onChangeTopic } = props;
+    const { filter, topics, onChangeTopic } = props;
     const [checked, setChecked] = useState();
 
+    // Xử lý khi thay đổi topic
     const handleChangeTopic = (e) => {
-        let topic = e.target.value
+        // Lấy giá trị topic đã chọn
+        let topic = e.target.value;
 
-        setChecked(topic);
+        // Set lại state
+        setChecked(topic)
+
+        // Gửi giá trị vừa chọn => component cha (Course)
         onChangeTopic(topic)
     }
 
@@ -24,7 +29,7 @@ function CourseTopic(props) {
                             type="radio"
                             value={topic.value}
                             id={topic.value}
-                            checked={topic.value === checked}
+                            checked={topic.value === filter.topic}
                             onChange={e => handleChangeTopic(e)}
                         />
                         <label htmlFor={topic.value} className="ms-2 fs-5">
