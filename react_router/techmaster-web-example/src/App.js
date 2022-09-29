@@ -9,6 +9,11 @@ import Track from "./pages/Track";
 import Blog from "./pages/Blog";
 import Project from "./pages/Project";
 import ShoppingCart from "./pages/ShoppingCart";
+import PrivateRoutes from "./pages/private/PrivateRoutes";
+import Profile from "./pages/private/Profile";
+import OrderHistory from "./pages/private/OrderHistory";
+import SecurityAccount from "./pages/private/SecurityAccount";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -25,6 +30,14 @@ function App() {
           <Route path="san-pham-hoc-vien" element={<Project />} />
           <Route path="bai-viet" element={<Blog />} />
           <Route path="gio-hang" element={<ShoppingCart />} />
+          <Route path="thanh-toan" element={<Checkout />} />
+
+          <Route element={<PrivateRoutes />}>
+            <Route path="ho-so-ca-nhan" element={<Profile />} />
+            <Route path="lich-su-giao-dich" element={<OrderHistory />} />
+            <Route path="bao-mat-tai-khoan" element={<SecurityAccount />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Route>
 

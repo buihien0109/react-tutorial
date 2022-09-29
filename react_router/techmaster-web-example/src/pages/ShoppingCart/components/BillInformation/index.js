@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Context from "../../../../context/Context";
 import { formatMoney } from "../../../../utils/utils";
 
@@ -31,6 +32,9 @@ function BillInformation() {
                             <span className="text-primary" id="total-money">
                                 {formatMoney(total)}
                             </span>
+                        </div>
+                        <div className="mt-4 text-center">
+                            <Link to="/thanh-toan" className='btn btn-primary'>Tiến hành thanh toán</Link>
                         </div>
                     </div>
                 </div>

@@ -6,11 +6,11 @@ import {
 } from "./constants";
 
 // 1. Initial state
-export const initialState =
+export const initialCart =
     JSON.parse(localStorage.getItem("cart-items")) || [];
 
 // 2. Reducer
-const reducer = (state, action) => {
+const shoppingCartReducer = (state, action) => {
     let newState = [];
     switch (action.type) {
         case ADD_PRODUCT: {
@@ -50,4 +50,4 @@ const reducer = (state, action) => {
     return newState;
 };
 
-export default reducer;
+export default shoppingCartReducer;
