@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 * {
     padding: 0;
     margin: 0;
@@ -5,6 +7,7 @@
 }
 
 body {
+    font-family: "Roboto", sans-serif;
     color: #222;
 }
 
@@ -18,7 +21,13 @@ img {
 }
 
 .nav-link.active {
-    color: red !important;
+    color: #ffc107 !important;
+}
+
+.cart-count {
+    top: -15px;
+    left: 15px;
+    font-size: 14px;
 }
 
 .course-item .thumbnail {
@@ -30,4 +39,48 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+
+.header {
+    background-color: #30598c;
+}
+
+.navbar-brand img {
+    width: 120px;
+}
+
+.navbar-dark .navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.course {
+    background-color: #f5faff;
+}
+
+.course-image {
+    height: 250px;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #30598c;
+}
+
+.footer-item h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-item p {
+    font-size: 14px;
 }

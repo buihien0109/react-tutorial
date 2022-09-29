@@ -1,0 +1,24 @@
+.course-item-image, .course-image {
+    height: 190px;
+}
+
+.course-item-image img, .course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-item-info h2 {
+    height: 48px;
+}
+
+.supporter-image {
+    width: 150px;
+    height: 150px;
+}
+
+.supporter-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

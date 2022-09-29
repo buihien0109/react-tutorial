@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NotFound() {
     return (
@@ -10,10 +11,10 @@ function NotFound() {
         >
             <div className="container">
                 <div className="text-center">
-                    <h1 className="text-center">Not found page</h1>
-                    <p>
-                        Quay lại <a href="/">trang chủ</a>
-                    </p>
+                    <h1 className="text-center fs-4 mb-5">Không tìm thấy trang yêu cầu</h1>
+                    <div>
+                        <Link to={"/"} className="btn btn-success">Quay lại trang chủ</Link>
+                    </div>
                 </div>
             </div>
         </section>
