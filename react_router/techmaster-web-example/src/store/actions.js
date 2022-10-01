@@ -7,8 +7,11 @@ import {
     LOGOUT,
     UPDATE_PROFILE,
     SYNC_AUTH,
+    CLEAR_CART,
+    ADD_ORDER,
 } from "./constants";
 
+// Shopping cart
 export const addProduct = (product) => {
     return {
         type: ADD_PRODUCT,
@@ -37,6 +40,13 @@ export const deleteProduct = (id) => {
     };
 };
 
+export const clearCart = () => {
+    return {
+        type: CLEAR_CART
+    };
+};
+
+// Auth
 export const login = (data) => {
     return {
         type: LOGIN,
@@ -57,9 +67,19 @@ export const syncAuth = (data) => {
     };
 };
 
+// User
 export const updateProfile = (data) => {
     return {
         type: UPDATE_PROFILE,
         payload: data
     };
 };
+
+// Order
+export const addOrder = (data) => {
+    return {
+        type: ADD_ORDER,
+        payload: data
+    };
+};
+

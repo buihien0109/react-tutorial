@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Context from "../../../../context/Context";
-import { formatMoney } from "../../../../utils/utils";
-import { addCount, subtractCount, deleteProduct } from "../../../../store/actions";
+import Context from "context/Context";
+import { formatMoney } from "utils/utils";
+import { addCount, subtractCount, deleteProduct } from "store/actions";
 
 function ProductItem(props) {
     const { cartItems, dispatchCart } = useContext(Context);

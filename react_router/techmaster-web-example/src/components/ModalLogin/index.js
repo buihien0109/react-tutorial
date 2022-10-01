@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import Context from "../../context/Context";
-import { login } from "../../store/actions";
+import Context from "context/Context";
+import { login } from "store/actions";
 
 function ModalLogin() {
     const { auth, dispatchAuth } = useContext(Context);

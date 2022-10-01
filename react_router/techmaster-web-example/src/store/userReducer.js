@@ -1,5 +1,5 @@
-import { users } from "../data/user-data";
-import { LOGIN, LOGOUT, UPDATE_PROFILE } from "./constants";
+import { users } from "data/user-data";
+import { UPDATE_PROFILE } from "./constants";
 
 
 // 1. Initial state
@@ -8,6 +8,7 @@ export const initialUser = JSON.parse(localStorage.getItem("users")) || [...user
 // 2. Reducer
 const userReducer = (state, action) => {
     console.log("userReducer : ", action)
+
     let newState = [];
     switch (action.type) {
         case UPDATE_PROFILE: {
@@ -22,6 +23,7 @@ const userReducer = (state, action) => {
         }
         default: {
             newState = [...state];
+            break;
         }
     }
     localStorage.setItem("users", JSON.stringify(newState));

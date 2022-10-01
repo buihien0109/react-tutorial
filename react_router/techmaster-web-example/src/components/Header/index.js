@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import Context from "../../context/Context";
-import { logout } from "../../store/actions";
+import Context from "context/Context";
+import { logout } from "store/actions";
 import ModalLogin from "../ModalLogin";
 import "./Header.css"
 

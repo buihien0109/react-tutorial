@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Context from "../../../../context/Context";
-import { formatMoney } from "../../../../utils/utils";
+import Context from "context/Context";
+import { formatMoney } from "utils/utils";
 
 function BillInformation() {
     const { cartItems } = useContext(Context);

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import Context from "../../context/Context";
+import Context from "context/Context";
 import CourseTopic from "./components/CourseTopic";
 import CourseSearch from "./components/CourseSearch";
 import CourseList from "./components/CourseList";

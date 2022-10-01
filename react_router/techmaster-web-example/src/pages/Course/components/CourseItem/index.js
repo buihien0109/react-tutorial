@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { formatMoney } from '../../../../utils/utils'
+import { formatMoney } from 'utils/utils'
 
 function CourseItem(props) {
     const { id, title, type, image, rating, price } = props.course

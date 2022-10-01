@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import Context from "../../../context/Context";
-import { syncAuth, updateProfile } from "../../../store/actions";
+import Context from 'context/Context';
+import { syncAuth, updateProfile } from "store/actions";
 
 function SecurityAccount() {
     const { auth, dispatchUser, dispatchAuth } = useContext(Context);

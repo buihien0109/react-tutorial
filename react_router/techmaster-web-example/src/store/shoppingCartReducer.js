@@ -3,6 +3,7 @@ import {
     SUBTRACT_COUNT,
     DELETE_PRODUCT,
     ADD_PRODUCT,
+    CLEAR_CART,
 } from "./constants";
 
 // 1. Initial state
@@ -40,8 +41,12 @@ const shoppingCartReducer = (state, action) => {
             newState = state.filter((product) => product.id !== id);
             break;
         }
+        case CLEAR_CART: {
+            newState = [];
+            break;
+        }
         default: {
-            newState = state;
+            newState = [...state];
             break;
         }
     }
