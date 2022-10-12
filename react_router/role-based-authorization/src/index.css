@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+img {
+    max-width: 100%;
+}
+
+.nav-link.active {
+    color: #ffc107 !important;
+}
+
+.cart-count {
+    top: -15px;
+    left: 15px;
+    font-size: 14px;
+}
+
+.course-item .thumbnail {
+    height: 250px;
+    overflow: hidden;
+}
+
+.course-item .thumbnail img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.header {
+    background-color: #7e7c64;
+}
+
+.navbar-brand img {
+    width: 120px;
+}
+
+.navbar-dark .navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}

@@ -1,0 +1,11 @@
+#auth-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.auth-dropdown .dropdown-menu[data-bs-popper] {
+    left: auto;
+    right: 0;
+}
