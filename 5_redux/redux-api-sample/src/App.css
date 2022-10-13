@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+}
+
+header .nav-item a {
+    color: #222;
+    margin-right: 1rem;
+}
+
+header .nav-item a.active {
+    color: #baae29;
+}
