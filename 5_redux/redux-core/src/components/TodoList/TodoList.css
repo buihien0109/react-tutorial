@@ -1,0 +1,10 @@
+.todo-active {
+    color: crimson;
+    text-decoration: line-through;
+}
+
+.list-todo li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
