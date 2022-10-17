@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Bui Hien",
+            "email": "hien@gmail.com",
+            "phone": "0987654321",
+            "password": "111"
+        },
+        {
+            "id": 2,
+            "name": "Minh Duy",
+            "email": "duy@gmail.com",
+            "phone": "0987654456",
+            "password": "111"
+        },
+        {
+            "id": 3,
+            "name": "Thu Hang",
+            "email": "hang@gmail.com",
+            "phone": "0987654789",
+            "password": "111"
+        }
+    ]
+}
