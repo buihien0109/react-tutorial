@@ -1,0 +1,4 @@
+.todo-active {
+    color: crimson;
+    text-decoration: line-through;
+}
