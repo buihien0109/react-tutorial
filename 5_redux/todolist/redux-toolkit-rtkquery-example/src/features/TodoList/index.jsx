@@ -23,7 +23,7 @@ function TodoList() {
             alert("Tiêu đề không được để trống");
             return;
         }
-
+        
         const newTodo = {
             title: title,
             status: false,
